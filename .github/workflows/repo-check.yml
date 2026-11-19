@@ -1,0 +1,29 @@
+name: repo-check
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check required files and resources
+        run: python3 scripts/check_repo.py
+
+      - name: Check conflict markers
+        run: |
+          if grep -rn -E '^(<<<<<<<|=======|>>>>>>>)' \
+            --include='*.ets' --include='*.ts' --include='*.md' --include='*.json5' .; then
+            echo "::error::发现未解决的合并冲突标记"
+            exit 1
+          fi
+          echo "No conflict markers found."

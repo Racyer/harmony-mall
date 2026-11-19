@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 开发规范
+    url: https://github.com/Racyer/harmony-mall/blob/main/docs/04-%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md
+    about: 提交 Issue / PR 前请先阅读分支与提交规范
+  - name: 提交清单
+    url: https://github.com/Racyer/harmony-mall/blob/main/docs/06-%E6%8F%90%E4%BA%A4%E6%B8%85%E5%8D%95.md
+    about: 打包、视频与命名要求
