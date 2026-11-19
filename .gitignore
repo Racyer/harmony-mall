@@ -1,0 +1,30 @@
+# HarmonyOS / DevEco Studio
+/.hvigor/
+/.idea/
+/build/
+/entry/build/
+/entry/.preview/
+/oh_modules/
+/node_modules/
+/local.properties
+*.hap
+*.hsp
+*.app
+*.p7b
+*.p12
+*.cer
+*.key
+
+# Test / coverage
+/entry/.test/
+/coverage/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Signing materials must never be committed
+/signing/

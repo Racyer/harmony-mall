@@ -1,0 +1,9 @@
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "鸿蒙优选主模块：页面、组件、状态与服务",
+  "main": "",
+  "author": "HarmonyMall Team",
+  "license": "MIT",
+  "dependencies": {}
+}

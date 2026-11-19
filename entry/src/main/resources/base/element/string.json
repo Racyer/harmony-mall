@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "鸿蒙优选电子商城主模块"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "鸿蒙优选应用入口"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "鸿蒙优选"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "brand",
+      "value": "#2F6BFF"
+    },
+    {
+      "name": "brand_light",
+      "value": "#EEF3FF"
+    },
+    {
+      "name": "text_primary",
+      "value": "#111827"
+    },
+    {
+      "name": "text_secondary",
+      "value": "#6B7280"
+    },
+    {
+      "name": "page_background",
+      "value": "#F5F6FA"
+    },
+    {
+      "name": "danger",
+      "value": "#FF4D4F"
+    }
+  ]
+}
