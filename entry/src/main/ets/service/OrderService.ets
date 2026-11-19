@@ -38,7 +38,7 @@ export class OrderService {
     };
     const orders: Order[] = OrderService.getOrders();
     orders.unshift(order);
-    AppStorage.setOrCreate(AppConstants.ORDERS_KEY, JSON.stringify(orders));
+    AppStorage.setOrCreate<string>(AppConstants.ORDERS_KEY, JSON.stringify(orders));
     return order;
   }
 }

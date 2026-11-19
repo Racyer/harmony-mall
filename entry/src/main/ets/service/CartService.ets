@@ -18,12 +18,12 @@ export class CartService {
   }
 
   static save(items: CartItem[]): void {
-    AppStorage.setOrCreate(AppConstants.CART_KEY, JSON.stringify(items));
+    AppStorage.setOrCreate<string>(AppConstants.CART_KEY, JSON.stringify(items));
     let count: number = 0;
     for (let i = 0; i < items.length; i++) {
       count += items[i].quantity;
     }
-    AppStorage.setOrCreate(AppConstants.CART_COUNT_KEY, count);
+    AppStorage.setOrCreate<number>(AppConstants.CART_COUNT_KEY, count);
   }
 
   static add(productId: number, quantity: number = 1): void {

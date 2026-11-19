@@ -15,14 +15,14 @@ export class AuthService {
     }
     const token: string = `mock-token-${Date.now()}`;
     const displayName: string = name === AppConstants.DEMO_ACCOUNT ? '鸿蒙体验官' : name;
-    AppStorage.setOrCreate(AppConstants.TOKEN_KEY, token);
-    AppStorage.setOrCreate(AppConstants.USER_NAME_KEY, displayName);
+    AppStorage.setOrCreate<string>(AppConstants.TOKEN_KEY, token);
+    AppStorage.setOrCreate<string>(AppConstants.USER_NAME_KEY, displayName);
     return true;
   }
 
   static logout(): void {
-    AppStorage.setOrCreate(AppConstants.TOKEN_KEY, '');
-    AppStorage.setOrCreate(AppConstants.USER_NAME_KEY, '');
+    AppStorage.setOrCreate<string>(AppConstants.TOKEN_KEY, '');
+    AppStorage.setOrCreate<string>(AppConstants.USER_NAME_KEY, '');
   }
 
   static isLoggedIn(): boolean {

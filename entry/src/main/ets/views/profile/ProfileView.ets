@@ -62,7 +62,7 @@ export struct ProfileView {
   }
 
   @Builder
-  StatItem(label: string, value: number, onTap: () => void) {
+  StatItem(label: string, value: number, action: string) {
     Column() {
       Text(value.toString())
         .fontSize(18)
@@ -75,7 +75,13 @@ export struct ProfileView {
     }
     .layoutWeight(1)
     .onClick(() => {
-      onTap();
+      if (action === 'favorites') {
+        RouterUtil.push(RouteConstants.FAVORITES);
+      } else if (action === 'orders') {
+        RouterUtil.push(RouteConstants.ORDER_LIST);
+      } else {
+        ToastUtil.show('请通过底部导航进入购物车');
+      }
     })
   }
 
@@ -133,15 +139,9 @@ export struct ProfileView {
       .width('100%')
 
       Row() {
-        this.StatItem('收藏', FavoriteService.count(), () => {
-          RouterUtil.push(RouteConstants.FAVORITES);
-        })
-        this.StatItem('订单', OrderService.getOrders().length, () => {
-          RouterUtil.push(RouteConstants.ORDER_LIST);
-        })
-        this.StatItem('购物车', this.cartCount, () => {
-          ToastUtil.show('请通过底部导航进入购物车');
-        })
+        this.StatItem('收藏', FavoriteService.count(), 'favorites')
+        this.StatItem('订单', OrderService.getOrders().length, 'orders')
+        this.StatItem('购物车', this.cartCount, 'cart')
       }
       .width('100%')
       .margin({ top: 18 })

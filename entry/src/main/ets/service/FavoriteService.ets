@@ -25,11 +25,11 @@ export class FavoriteService {
     const index: number = ids.indexOf(productId);
     if (index >= 0) {
       ids.splice(index, 1);
-      AppStorage.setOrCreate(AppConstants.FAVORITES_KEY, JSON.stringify(ids));
+      AppStorage.setOrCreate<string>(AppConstants.FAVORITES_KEY, JSON.stringify(ids));
       return false;
     }
     ids.push(productId);
-    AppStorage.setOrCreate(AppConstants.FAVORITES_KEY, JSON.stringify(ids));
+    AppStorage.setOrCreate<string>(AppConstants.FAVORITES_KEY, JSON.stringify(ids));
     return true;
   }
 

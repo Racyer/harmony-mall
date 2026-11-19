@@ -24,7 +24,7 @@ export default class EntryAbility extends UIAbility {
     PersistentStorage.persistProp(AppConstants.ORDERS_KEY, '[]');
     PersistentStorage.persistProp(AppConstants.ADDRESS_KEY, AppConstants.DEFAULT_ADDRESS);
 
-    AppStorage.setOrCreate(AppConstants.CART_COUNT_KEY, CartService.count());
+    AppStorage.setOrCreate<number>(AppConstants.CART_COUNT_KEY, CartService.count());
     hilog.info(DOMAIN, TAG, '%{public}s', 'Ability onCreate');
   }
 

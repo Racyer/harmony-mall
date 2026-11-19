@@ -63,6 +63,8 @@ harmony-mall/
 4. 选择 `entry` 模块，连接真机或启动模拟器，点击 Run。
 5. 演示账号：`demo / 123456`。
 
+> `repo-check` 工作流只做页面注册、导入路径、资源引用的静态检查，不等同于 DevEco 编译；提交前仍须在 IDE 中完整 Build 一次。
+
 > 若使用 DevEco Studio 6.x 且本机只安装了更高版本 SDK，可将 `build-profile.json5` 中的 `compatibleSdkVersion` 改为本机版本（例如 `6.0.0(20)`），并在组内统一后再提交。
 
 ## 架构设计

@@ -25,13 +25,13 @@ struct AddressPage {
       return;
     }
     const fullAddress: string = `${this.receiver.trim()} ${this.phone.trim()} ${this.detail.trim()}`;
-    AppStorage.setOrCreate('address', fullAddress);
+    AppStorage.setOrCreate<string>('address', fullAddress);
     ToastUtil.show('地址已保存');
     RouterUtil.back();
   }
 
   @Builder
-  LabeledInput(label: string, placeholder: string, value: string, onChange: (value: string) => void) {
+  LabeledInput(label: string, placeholder: string, value: string, field: string) {
     Column() {
       Text(label)
         .fontSize(12)
@@ -45,7 +45,11 @@ struct AddressPage {
         .borderRadius(10)
         .padding({ left: 12, right: 12 })
         .onChange((input: string) => {
-          onChange(input);
+          if (field === 'receiver') {
+            this.receiver = input;
+          } else if (field === 'phone') {
+            this.phone = input;
+          }
         })
     }
     .width('100%')
@@ -88,13 +92,9 @@ struct AddressPage {
               .width('100%')
               .margin({ bottom: 16 })
 
-            this.LabeledInput('收货人', '请输入姓名', this.receiver, (value: string) => {
-              this.receiver = value;
-            })
+            this.LabeledInput('收货人', '请输入姓名', this.receiver, 'receiver')
 
-            this.LabeledInput('联系电话', '请输入手机号', this.phone, (value: string) => {
-              this.phone = value;
-            })
+            this.LabeledInput('联系电话', '请输入手机号', this.phone, 'phone')
 
             Text('详细地址')
               .fontSize(12)
