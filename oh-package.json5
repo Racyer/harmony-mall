@@ -1,7 +1,5 @@
 {
   "modelVersion": "5.0.0",
-  "name": "harmony-mall",
-  "version": "1.0.0",
   "description": "鸿蒙优选 HarmonyMart - HarmonyOS NEXT 电子商城课程大作业",
   "dependencies": {},
   "devDependencies": {}

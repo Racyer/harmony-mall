@@ -101,6 +101,8 @@ flowchart LR
 
 > 成员A–D 为姓名占位，提交前替换为真实姓名。完整分工、里程碑与提交要求见 [四人分工方案](docs/四人分工方案.docx)。
 
+其他成员把 GitHub 用户名发给组长，由组长在 `Settings > Collaborators` 邀请加入；加入前可先 Fork 仓库，通过 PR 参与。GitHub 用户名确定后，也可以把上表中的占位替换为 `@username`。
+
 ## 文档索引
 
 - [需求分析](docs/01-需求分析.md)
